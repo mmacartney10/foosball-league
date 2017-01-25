@@ -15,7 +15,7 @@ var Timer = React.createClass({
   },
 
   timer: function() {
-    this.setState({ count: this.state.count + 12})
+    this.setState({ count: this.state.count + 1})
   },
 
   render: function() {
