@@ -5,7 +5,7 @@ const config = {
   entry: [
     'webpack-dev-server/client?http://localhost:7000',
     'webpack/hot/only-dev-server',
-    './app/index.js'
+    './app/main.js'
   ],
   output: {
     path: path.resolve(__dirname),

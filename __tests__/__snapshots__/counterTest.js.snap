@@ -1,0 +1,11 @@
+exports[`test Count increments by one when button clicked 1`] = `
+<div>
+  <h1>
+    0
+  </h1>
+  <button
+    onClick={[Function]}>
+    Increment
+  </button>
+</div>
+`;
