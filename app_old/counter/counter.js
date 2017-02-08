@@ -8,8 +8,6 @@ var Counter = React.createClass({
   },
 
   updateText: function() {
-    console.log('start');
-
     store.dispatch({
       type: 'INCREMENT',
       count: this.state.count

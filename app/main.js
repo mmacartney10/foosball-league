@@ -1,23 +1,15 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
+import React from 'react';
+import { render } from 'react-dom';
 
-import store from './store'
-import Counter from './counter/counter'
+import store from './store';
+import Root from './root';
 
 const renderDom = () => {
-  render(
-    <Provider store={store}>
-      <Counter/>
-    </Provider>,
+  render (
+    <Root store={store}/>,
     document.getElementById('root')
-  );
+  )
 }
 
 store.subscribe(renderDom);
 renderDom();
-
-
-if (module.hot) {
-  module.hot.accept()
-}

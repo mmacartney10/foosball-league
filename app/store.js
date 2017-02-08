@@ -1,25 +1,21 @@
-import 'rxjs';
-import { createStore, applyMiddleware, combineReducers } from 'redux';
-import { createEpicMiddleware, combineEpics } from 'redux-observable';
+import { createStore } from 'redux';
 
-import counterEpic from './counter/counterEpic';
-import counterReducer from './counter/counterReducer';
+const CounterReducer = (state = 0, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return action.count + 1
+    case 'DECREMENT':
+      return state - 1
+    default:
+      return state
+  }
+}
 
-// const rootEpic = combineEpics({
-//   counterEpic
-// });
-
-// const rootReducer = combineReducers({
-//   counterReducer
-// });
-
-const epicMiddleware = createEpicMiddleware(counterEpic);
-
-const store = createStore(
-  counterReducer,
-  applyMiddleware(epicMiddleware)
+let store = createStore(
+  CounterReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-console.log(store.getState());
+console.log('state:', store.getState());
 
 export default store;
