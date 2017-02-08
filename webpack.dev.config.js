@@ -23,6 +23,10 @@ const config = {
     historyApiFallback: true
   },
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "vendorDev",
+      filename: "vendor.dev.js"
+    })
   ],
 };
 
