@@ -1,14 +1,18 @@
-$c-red: #F00;
+$c-red: #F00000;
+$c-yellow: #FFF000;
 
 .title {
   color: $c-red;
   padding: 20px;
   display: block;
   text-decoration: underline;
-
   transform: rotate(180deg);
 
   &:hover {
-    background-color: #FF0;
+    background-color: $c-yellow;
+  }
+
+  &:before {
+    content: '';
   }
 }
