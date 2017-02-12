@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './app.scss';
 
 var App = React.createClass({
 
@@ -9,9 +10,9 @@ var App = React.createClass({
   render: function()  {
     return (
       <div>
-        <h1>This is an app {this.state.count}</h1>
+        <h1 className="title">This is an App {this.state.count}</h1>
       </div>
-    )
+    );
   }
 });
 

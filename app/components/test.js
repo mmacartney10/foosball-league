@@ -11,7 +11,7 @@ var App = React.createClass({
       <div>
         <h1>This is a test</h1>
       </div>
-    )
+    );
   }
 });
 

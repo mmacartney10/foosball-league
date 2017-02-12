@@ -8,8 +8,8 @@ const renderDom = () => {
   render (
     <Root store={store}/>,
     document.getElementById('root')
-  )
-}
+  );
+};
 
 store.subscribe(renderDom);
 renderDom();
