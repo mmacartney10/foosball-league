@@ -1,0 +1,54 @@
+@define-mixin respond-to-max($width) {
+    @if $fix-mqs {
+        @if $fix-mqs <= $width {
+            @content;
+        }
+    } @else {
+        @media screen and (max-width: $width) {
+            @content;
+        }
+    }
+}
+
+@define-mixin respond-to-min($width) {
+    @if $fix-mqs {
+        @if $fix-mqs >= $width {
+            @content;
+        }
+    } @else {
+        @media screen and (min-width: $width) {
+            @content;
+        }
+    }
+}
+
+@define-mixin respond-min-max($width--min, $width--max) {
+    @if $fix-mqs {
+        @if $fix-mqs >= $width--min and $fix-mqs <= $width--max {
+            @content;
+        }
+    } @else {
+        @media screen and (min-width: $width--min) and (max-width: $width--max) {
+            @content;
+        }
+    }
+}
+
+@function gcd($a, $b) {
+     @if $b == 0{
+        @return $a;
+    }
+    @return gcd($b, $a % $b);
+}
+
+@define-mixin widths($cols, $modifier: '') {
+     @for $i from 1 through $cols - 1{
+        $gcd: gcd($i, $cols);
+        $numerator: $i / $gcd;
+        $denominator: $cols / $gcd;
+
+        .col--#{$numerator}\/#{$denominator}#{$modifier} {
+            width: $i / $cols * 100%;
+        }
+    }
+}

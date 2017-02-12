@@ -1,2 +1,10 @@
-@import './_elements/_elements.test.scss';
-@import './_elements/_elements.other.scss';
+@import './_settings/_settings.colors.scss';
+@import './_settings/_settings.global.scss';
+@import './_settings/_settings.layout.scss';
+@import './_tools/_tools.mixins.scss';
+@import './_tools/_tools.typography.scss';
+@import './_generic/_generic.box-sizing.scss';
+@import './_generic/_generic.normalize.scss';
+@import './_elements/_elements.links.scss';
+@import './_objects/_objects.layout.scss';
+@import './_objects/_objects.styleguide.scss';
