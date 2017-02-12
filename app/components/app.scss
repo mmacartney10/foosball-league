@@ -1,5 +1,7 @@
+$c-red: #F00;
+
 .title {
-  color: #F00;
+  color: $c-red;
   padding: 20px;
   display: block;
   text-decoration: underline;
